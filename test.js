@@ -1,7 +1,6 @@
 var expect = require('chai').expect
-  , window = require("jsdom").jsdom('<div>').defaultView
-  , document = global.document = window.document
-  , createElement = document.createElement = polyfill()
+  , client = require('client')
+  , shim = !client && polyfill()
   , attr = require('attr')
   , el = require('./')
 
@@ -22,6 +21,12 @@ describe('el', function() {
 })
 
 function polyfill(){
+  window = require("jsdom").jsdom('<div>').defaultView
+  global.document = window.document
+  document.createElement = createElement()
+}
+
+function createElement(){
   var proxy = document.createElement
   return function(){
     var created = proxy.apply(this, arguments)
@@ -32,6 +37,8 @@ function polyfill(){
 
 function add(element){
   return function(d){
+    /* istanbul ignore next */
+    if (~element.className.indexOf(d)) return;
     element.className += ' ' + d
     element.className = element.className.trim()
   }
