@@ -1,5 +1,5 @@
 {
-  "name": "el",
+  "name": "utilise.el",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "pemrouz.mit-license.org",
   "devDependencies": {
     "chai": "^2.3.0",
-    "client": "git+https://github.com/utilise/client.git",
+    "utilise.client": "*",
     "coveralls": "^2.11.2",
     "istanbul": "^0.3.13",
     "jsdom": "^5.4.3",
@@ -18,9 +18,9 @@
     "mocha-lcov-reporter": "0.0.2"
   },
   "dependencies": {
-    "attr": "git+https://github.com/utilise/attr.git",
-    "prepend": "git+https://github.com/utilise/prepend.git",
-    "replace": "git+https://github.com/utilise/replace.git",
-    "split": "git+https://github.com/utilise/split.git"
+    "utilise.attr": "*",
+    "utilise.prepend": "*",
+    "utilise.replace": "*",
+    "utilise.split": "*"
   }
 }

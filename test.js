@@ -1,7 +1,7 @@
 var expect = require('chai').expect
-  , client = require('client')
+  , client = require('utilise.client')
   , shim = !client && polyfill()
-  , attr = require('attr')
+  , attr = require('utilise.attr')
   , el = require('./')
 
 describe('el', function() {
